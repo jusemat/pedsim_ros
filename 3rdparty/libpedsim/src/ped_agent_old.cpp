@@ -11,7 +11,6 @@
 #include <algorithm>
 #include <cmath>
 #include <random>
-#include <iostream>
 
 using namespace std;
 
@@ -160,15 +159,7 @@ Ped::Tvector Ped::Tagent::socialForce() const {
     Tvector diff = other->p - p;
 
     if(other->getType() == ROBOT) {diff /= robotPosDiffScalingFactor;
-    if (id == 1) {
-    	if(diff.length()>=0.3){
-//    		if(diff.x>=0){
-    		diff /= -robotPosDiffScalingFactor;}
-//    		else{diff /= robotPosDiffScalingFactor;}}
-    	else{
-    		diff /= robotPosDiffScalingFactor;}
-    //cout << diff.length();
-    	}
+    if (id == 1)diff /= -robotPosDiffScalingFactor;
     }
 
     Tvector diffDirection = diff.normalized();
