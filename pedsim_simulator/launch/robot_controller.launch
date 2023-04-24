@@ -10,6 +10,7 @@
     <param name="pose_initial_x" value="$(arg pose_initial_x)"/>
     <param name="pose_initial_y" value="$(arg pose_initial_y)"/>
     <param name="pose_initial_theta" value="$(arg pose_initial_theta)"/>
+    <remap from="/pedbot/control/cmd_vel" to="/cmd_vel"/>
   </node>
 
   <!-- Keyboard robot steering -->

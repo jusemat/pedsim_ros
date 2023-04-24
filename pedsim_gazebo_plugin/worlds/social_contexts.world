@@ -223,6 +223,351 @@
       </link>
     </model>
     
+    <!--actor name="1"-->
+    <!--pose>0 1 1.25 0 0 0</pose>
+			  <skin>
+				<filename>stand.dae</filename>
+			  </skin-->
+			 <!--link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>file://walk.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link-->
+      <!--skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation--> 
+          <!--script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>0 2 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>0 -2 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>2.5</time>
+            <pose>0 -2 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>7</time>
+            <pose>0 2 0 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>7.5</time>
+            <pose>0 2 0 0 0 -1.57</pose>
+          </waypoint>
+        </trajectory>
+      </script-->
+    <!--/actor-->
+
+	
+	<actor name="1">
+      <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+      
+    <actor name="2">
+      <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="3">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="4">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="5">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="6">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="7">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="8">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="9">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="10">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="11">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="12">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="13">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="14">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="15">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="16">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="17">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="18">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="19">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="20">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="21">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="22">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="23">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="24">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="25">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="26">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="27">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="28">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="29">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
+    
+    <actor name="30">
+        <link name="link">
+          <visual name="visual">
+			  <geometry>
+				<mesh><uri>/home/sebmat/catkin_ws/src/pedsim_ros/pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+			  </geometry>
+          </visual>
+        </link>
+    </actor>
 
             <plugin name="ActorPosesPlugin" filename="libActorPosesPlugin.so">
         </plugin>

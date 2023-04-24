@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This scenario file was created by SGDiCoP on 2014-04-16T15:14:48-->
+<scenario>
+    <!--Obstacles-->
+  <obstacle x1="-0.5" y1="-0.5" x2="29.5" y2="-0.5"/> 
+  <obstacle x1="-0.5" y1="29.5" x2="29.5" y2="29.5"/>
+  <obstacle x1="29.5" y1="24.5" x2="29.5" y2="4.5"/>
+  
+  <obstacle x1="3.5" y1="4.5" x2="3.5" y2="4.5"/>
+  <obstacle x1="9.5" y1="4.5" x2="9.5" y2="4.5"/>
+  <obstacle x1="15.5" y1="4.5" x2="15.5" y2="4.5"/>
+  <obstacle x1="21.5" y1="4.5" x2="21.5" y2="4.5"/>
+  
+  <obstacle x1="3.5" y1="24.5" x2="3.5" y2="24.5"/>
+  <obstacle x1="9.5" y1="24.5" x2="9.5" y2="24.5"/>
+  <obstacle x1="15.5" y1="24.5" x2="15.5" y2="24.5"/>
+  <obstacle x1="21.5" y1="24.5" x2="21.5" y2="24.5"/>
+
+  <!--Waypoints (incl. WaitingQueues)-->
+  <waypoint id="ramp1" x="33" y="2" r="5"/>
+  <waypoint id="ramp2" x="33" y="27" r="5"/>
+  <waypoint id="arc1" x="-3" y="2" r="5"/>
+  <waypoint id="arc2" x="-3" y="27" r="5"/>
+  <waypoint id="center" x="15" y="15" r="5"/>
+  
+  <waypoint id="library" x="-3" y="2" r="2" b="0"/>
+  <waypoint id="south_ramp" x="33" y="2" r="2" b="0"/>
+  <waypoint id="RA" x="-3" y="27" r="2" b="0"/>
+  <waypoint id="nort_ramp" x="33" y="27" r="2" b="0"/>
+  
+  <waypoint id="library2" x="-3" y="2" r="2" b="0"/>
+  <waypoint id="south_ramp2" x="33" y="2" r="2" b="0"/>
+  <waypoint id="RA2" x="-3" y="27" r="2" b="0"/>
+  <waypoint id="nort_ramp2" x="33" y="27" r="2" b="0"/>
+
+    <!--Agents-->
+    <agent x="2" y="15" n="1" dx="0" dy="0" type="2">
+        <addwaypoint id="robot_start"/>
+        <addwaypoint id="robot_goal"/>
+    </agent>
+    <!--AgentClusters-->
+    <agent x="10" y="15" n="6" dx="3" dy="3" type="0">
+        <addwaypoint id="arc1"/>
+        <addwaypoint id="center"/>
+        <addwaypoint id="ramp2"/>
+    </agent>
+    <agent x="20" y="15" n="6" dx="3" dy="3" type="1">
+        <addwaypoint id="arc2"/>
+        <addwaypoint id="center"/>
+        <addwaypoint id="ramp1"/>
+    </agent>
+    <agent x="15" y="10" n="6" dx="3" dy="3" type="0">
+        <addwaypoint id="ramp1"/>
+        <addwaypoint id="arc2"/>
+    </agent>
+    <agent x="15" y="20" n="6" dx="3" dy="3" type="1">
+        <addwaypoint id="ramp2"/>
+        <addwaypoint id="arc1"/>
+    </agent>
+    <agent x="-3" y="2" n="2" dx="1" dy="1" type="0">
+	    <addwaypoint id="library"/>
+	    <addwaypoint id="south_ramp"/>
+	  </agent>
+    <agent x="-3" y="27" n="2" dx="1" dy="1" type="0">
+	    <addwaypoint id="RA"/>
+	    <addwaypoint id="nort_ramp"/>
+	  </agent>
+    <agent x="33" y="2" n="1" dx="1" dy="1" type="0">
+	    <addwaypoint id="south_ramp2"/>
+	    <addwaypoint id="library2"/>
+	  </agent>
+    <agent x="33" y="27" n="1" dx="1" dy="1" type="0">
+	    <addwaypoint id="nort_ramp2"/>
+	    <addwaypoint id="RA2"/>
+	  </agent>
+</scenario>

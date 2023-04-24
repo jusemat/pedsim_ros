@@ -1,14 +1,19 @@
 <launch>
 
         <!-- this file is auto generated using pedsim_gazebo_plugin pkg -->  
+        <arg name="paused" default="true"/>
+        <arg name="gui" default="true"/>
+        <arg name="world_name" default="$(find pedsim_gazebo_plugin)/worlds/social_contexts.world"/>
         
         <include file="$(find gazebo_ros)/launch/empty_world.launch">
-             <arg name="world_name" value="$(find pedsim_gazebo_plugin)/worlds/social_contexts.world"/>
+             <arg name="world_name" value="$(arg world_name)"/>
+             <arg name="paused" value="$(arg paused)"/>
+             <arg name="gui" value="$(arg gui)"/>
          </include>
          
-         <!-- this node spawn pedsim actors to gazebo once, then the plugin updates their pose -->  
+         <!-- this node spawn pedsim actors to gazebo once, then the plugin updates their pose >  
          <node pkg="pedsim_gazebo_plugin" type="spawn_pedsim_agents.py" name="spawn_pedsim_agents"  output="screen">
-         </node>
+         </node-->
 
 
 </launch>

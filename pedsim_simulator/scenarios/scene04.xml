@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This scenario file was created by SGDiCoP on 2014-04-16T15:14:48-->
+<scenario>
+  
+  <!--Waypoints (incl. WaitingQueues)-->
+  <waypoint id="meeting" x="7" y="15" r="2" b="0"/>
+
+    <!--Agents-->
+    <agent x="2" y="15" n="1" dx="0" dy="0" type="2">
+        <addwaypoint id="robot_start"/>
+        <addwaypoint id="robot_goal"/>
+    </agent>
+    <agent x="7" y="15" n="5" dx="3" dy="5" type="0">
+     <addwaypoint id="meeting"/>
+  	</agent>
+</scenario>

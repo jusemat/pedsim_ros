@@ -21,7 +21,17 @@ find_package(catkin REQUIRED COMPONENTS
  find_package(gazebo REQUIRED )
  link_directories(${GAZEBO_LIBRARY_DIRS})
 
-
+#find_package(ignition-cmake2 REQUIRED)
+#find_package(ignition-plugin1 REQUIRED COMPONENTS register)
+#set(IGN_PLUGIN_VER ${ignition-plugin1_VERSION_MAJOR})
+#
+#find_package(ignition-gazebo3 REQUIRED)
+#add_library(IgnActorPosesPlugin SHARED src/ign_actor_poses_plugin.cpp)
+#set_property(TARGET IgnActorPosesPlugin PROPERTY CXX_STANDARD 17)
+#target_link_libraries(IgnActorPosesPlugin
+#  PRIVATE ignition-plugin${IGN_PLUGIN_VER}::ignition-plugin${IGN_PLUGIN_VER}
+#  PRIVATE ignition-gazebo3::ignition-gazebo3)
+#add_dependencies(IgnActorPosesPlugin ${catkin_EXPORTED_TARGETS})
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################

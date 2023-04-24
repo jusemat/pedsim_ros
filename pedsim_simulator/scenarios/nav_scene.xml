@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Agent in shops and the robot passes by as well -->
+<scenario>
+    <!--Obstacles-->
+  <obstacle x1="-0.5" y1="-0.5" x2="29.5" y2="-0.5"/> 
+  <obstacle x1="-0.5" y1="29.5" x2="29.5" y2="29.5"/>
+  <obstacle x1="29.5" y1="24.5" x2="29.5" y2="4.5"/>
+  
+  <obstacle x1="3.5" y1="4.5" x2="3.5" y2="4.5"/>
+  <obstacle x1="9.5" y1="4.5" x2="9.5" y2="4.5"/>
+  <obstacle x1="15.5" y1="4.5" x2="15.5" y2="4.5"/>
+  <obstacle x1="21.5" y1="4.5" x2="21.5" y2="4.5"/>
+  
+  <obstacle x1="3.5" y1="24.5" x2="3.5" y2="24.5"/>
+  <obstacle x1="9.5" y1="24.5" x2="9.5" y2="24.5"/>
+  <obstacle x1="15.5" y1="24.5" x2="15.5" y2="24.5"/>
+  <obstacle x1="21.5" y1="24.5" x2="21.5" y2="24.5"/>
+  
+  <!-- Aulas -->
+  <obstacle x1="30" y1="29.5" x2="55" y2="29.5"/>
+  <obstacle x1="30" y1="-0.5" x2="55" y2="-0.5"/>
+  
+  <obstacle x1="30" y1="24.5" x2="55" y2="24.5"/>
+  <obstacle x1="30" y1="4.5" x2="55" y2="4.5"/>
+  
+  <obstacle x1="55" y1="4.5" x2="55" y2="24.5"/>
+  <obstacle x1="65" y1="-0.5" x2="65" y2="29.5"/>
+  
+  <!-- dummy obstacle -->
+  <!--obstacle x1="15" y1="15" x2="15" y2="15"/-->
+  
+    <!--Waypoints (incl. WaitingQueues)-->
+  <waypoint id="ramp1" x="33" y="2" r="5"/>
+  <waypoint id="ramp2" x="33" y="27" r="5"/>
+  <waypoint id="arc1" x="-3" y="2" r="5"/>
+  <waypoint id="arc2" x="-3" y="27" r="5"/>
+  <waypoint id="center" x="15" y="15" r="5"/>
+    <!--waypoint id="Goal 1" x="25" y="10" r="3"/>
+    <waypoint id="Goal 2" x="5" y="20" r="3"/-->
+    <!-- <queue id="info_desk" x="20" y="15" direction="0"/> -->
+    <waypoint id="robot_goal" x="22" y="27" r="5"/>
+    <waypoint id="robot_start" x="4" y="4" r="2"/>
+    <!--Attractions-->
+    <!--attraction id="Bookshop" x="17" y="12" width="10" height="15" strength="50.0"/-->
+    <!-- <attraction id="starbucksky" x="3" y="15" width="5" height="10" strength="2"/> -->
+    <!--Agents-->
+    <agent x="4" y="4" n="1" dx="0" dy="0" type="2">
+        <addwaypoint id="robot_start"/>
+        <addwaypoint id="robot_goal"/>
+    </agent>
+    <!--AgentClusters-->
+    <agent x="-3" y="15" n="1" dx="3" dy="3" type="0">
+        <!-- <addqueue id="info_desk"/> -->
+        <!--addwaypoint id="arc1"/>
+        <addwaypoint id="ramp1"/>
+        <addwaypoint id="ramp2"/>
+        <addwaypoint id="arc2"/>
+        <addwaypoint id="center"/-->
+    </agent>
+
+</scenario>
