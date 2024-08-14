@@ -11,7 +11,6 @@
 #include <algorithm>
 #include <cmath>
 #include <random>
-#include <iostream>
 
 using namespace std;
 
@@ -34,7 +33,6 @@ Ped::Tagent::Tagent() {
   // assign random maximal speed in m/s
   normal_distribution<double> distribution(1.34, 0.26);
   vmax = distribution(generator);
-  //vmax = 0.5;
 
   forceFactorDesired = 1.0;
   forceFactorSocial = 2.1;
@@ -112,6 +110,12 @@ void Ped::Tagent::setForceFactorObstacle(double f) { forceFactorObstacle = f; }
 /// \return  Tvector: the calculated force
 Ped::Tvector Ped::Tagent::desiredForce() {
   // get destination
+  //Twaypoint* waypoint = getCurrentWaypoint();
+  Tvector pose;
+  for (const Ped::Tagent* other : neighbors) {
+  	if (other->id == id) continue;
+    	if(other->getType() == ROBOT) pose = other->p;
+  }
   Twaypoint* waypoint = getCurrentWaypoint();
 
   // if there is no destination, don't move
@@ -120,6 +124,8 @@ Ped::Tvector Ped::Tagent::desiredForce() {
     Tvector antiMove = -v / relaxationTime;
     return antiMove;
   }
+  waypoint->setPosition(pose);
+  waypoint->setType(waypoint->PointWaypoint);
 
   // compute force
   Tvector force = waypoint->getForce(*this, &desiredDirection);
@@ -160,20 +166,7 @@ Ped::Tvector Ped::Tagent::socialForce() const {
     // compute difference between both agents' positions
     Tvector diff = other->p - p;
 
-    if(other->getType() == ROBOT) {
-    if (id == 1) {
-    	if(diff.length()>=1.0){
-//    		if(diff.x>=0){
-    		diff /= -robotPosDiffScalingFactor;}
-//    		else{diff /= robotPosDiffScalingFactor;}}
-    	else{
-    		diff /= robotPosDiffScalingFactor;}
-    //cout << diff.length();
-    	}
-    else{
-    	diff /= robotPosDiffScalingFactor;
-    	}
-    }
+    if(other->getType() == ROBOT) diff /= robotPosDiffScalingFactor;
 
     Tvector diffDirection = diff.normalized();
 
@@ -193,8 +186,6 @@ Ped::Tvector Ped::Tagent::socialForce() const {
     double B = gamma * interactionLength;
 
     double thetaRad = theta.toRadian();
-    if (id == 1) {  //check person and robot orientation
-    if(thetaRad>=0 and thetaRad<=3.1415){
     double forceVelocityAmount =
         -exp(-diff.length() / B -
              (n_prime * B * thetaRad) * (n_prime * B * thetaRad));
@@ -207,21 +198,6 @@ Ped::Tvector Ped::Tagent::socialForce() const {
         forceAngleAmount * interactionDirection.leftNormalVector();
 
     force += forceVelocity + forceAngle;
-    }}
-    else{
-    double forceVelocityAmount =
-        -exp(-diff.length() / B -
-             (n_prime * B * thetaRad) * (n_prime * B * thetaRad));
-    double forceAngleAmount =
-        -theta.sign() *
-        exp(-diff.length() / B - (n * B * thetaRad) * (n * B * thetaRad));
-
-    Tvector forceVelocity = forceVelocityAmount * interactionDirection;
-    Tvector forceAngle =
-        forceAngleAmount * interactionDirection.leftNormalVector();
-
-    force += forceVelocity + forceAngle;
-    }
   }
 
   return force;
