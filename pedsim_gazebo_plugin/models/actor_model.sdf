@@ -15,7 +15,7 @@
 
     <visual name="visual">
       <geometry>
-        <mesh><uri>file://walk.dae</uri></mesh>
+        <mesh><uri>model://pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
       </geometry>
     </visual>
 
