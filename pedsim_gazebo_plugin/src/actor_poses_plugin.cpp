@@ -20,8 +20,6 @@ Created on Mon Dec  2
 namespace gazebo
 {
     class ActorPosesPlugin : public WorldPlugin{
-    	pedsim_msgs::AgentStatesConstPtr aux;
-    	bool first_time = false;
         public:
             ActorPosesPlugin() : WorldPlugin(){}
 
@@ -36,39 +34,13 @@ namespace gazebo
             rosSub = rosNode->subscribe(so);
             rosQueueThread =std::thread(std::bind(&ActorPosesPlugin::QueueThread, this));
             // in case you need to change/modify model on update
-            //this->updateConnection_ = event::Events::ConnectWorldUpdateBegin(std::bind(&ActorPosesPlugin::OnUpdate, this, std::placeholders::_1));
+            // this->updateConnection_ = event::Events::ConnectWorldUpdateBegin(std::bind(&ActorPosesPlugin::OnUpdate, this));
         }
-        
-        /*void OnUpdate(const common::UpdateInfo &_info){
-        physics::ModelPtr  tmp_model;
-        tmp_model = world_->ModelByName("1");
-        //ScriptTime ()
-        physics::ActorPtr actor;
-        actor=boost::dynamic_pointer_cast<physics::Actor>(tmp_model);
-        //std::string msg = std::to_string(actor->ScriptTime())+"\n";
-        //std::string msg = "hello world: "+std::to_string(_info.simTime.Double())+"\n";
-        	//ROS_INFO(msg);
-        	//printf(msg.c_str());
-        if (first_time){
-            ignition::math::Pose3d gzb_pose;
-            gzb_pose.Pos().Set( aux->agent_states[0].pose.position.x,
-                                aux->agent_states[0].pose.position.y,
-                                aux->agent_states[0].pose.position.z + MODEL_OFFSET);
-            gzb_pose.Rot().Set(aux->agent_states[0].pose.orientation.w,
-                               aux->agent_states[0].pose.orientation.x,
-                               aux->agent_states[0].pose.orientation.y,
-                               aux->agent_states[0].pose.orientation.z);
-			actor->SetWorldPose(gzb_pose);
-		}
-        actor->SetScriptTime(_info.simTime.Double());
-        }*/
 
 
         public:
             // call back function when receive rosmsg
-            void OnRosMsg( pedsim_msgs::AgentStatesConstPtr msg) {
-            	aux = msg;
-            	first_time = true;
+            void OnRosMsg( const pedsim_msgs::AgentStatesConstPtr msg) {
 //              ROS_INFO ("OnRosMsg ... ");
                 std::string model_name;
 #if GAZEBO_MAJOR_VERSION < 9
@@ -84,8 +56,6 @@ namespace gazebo
 #endif
                     std::string frame_id;
                     frame_id = tmp_model->GetName();
-                    physics::ActorPtr _actor;
-					_actor=boost::dynamic_pointer_cast<physics::Actor>(tmp_model);
 
                     for (uint actor =0; actor< msg->agent_states.size() ; actor++) {
                         if(frame_id == std::to_string( msg->agent_states[actor].id)  ){
@@ -100,22 +70,7 @@ namespace gazebo
                                                msg->agent_states[actor].pose.orientation.z);
 
                             try{
-                            	//if(actor!=0){
-                                _actor->SetWorldPose(gzb_pose);
-                                //}
-//                                if(actor==0){
-//                                	std::string dato = "w: "+std::to_string(msg->agent_states[actor].pose.orientation.w)+
-//				                                       " x: "+std::to_string(msg->agent_states[actor].pose.orientation.x)+
-//				                                       " y: "+std::to_string(msg->agent_states[actor].pose.orientation.y)+
-//				                                       " z:"+std::to_string(msg->agent_states[actor].pose.orientation.z)+"\n";
-//                                	std::string dato2 = "x: "+std::to_string(gzb_pose.Rot().Euler()[0])+
-//				                                       " y: "+std::to_string(gzb_pose.Rot().Euler()[1])+
-//				                                       " z:"+std::to_string(gzb_pose.Rot().Euler()[2])+"\n";
-//									std::string dato = "plugins: "+std::to_string(_actor->GetPluginCount())+"\n";
-//				                    printf(dato.c_str());
-//				                    printf(dato2.c_str());
-//                                	_actor->SetWorldPose(gzb_pose,false,false);
-//                                }
+                                tmp_model->SetWorldPose(gzb_pose);
                             }
                             catch(gazebo::common::Exception gz_ex){
                                 ROS_ERROR("Error setting pose %s - %s", frame_id.c_str(), gz_ex.GetErrorStr().c_str());
@@ -143,7 +98,7 @@ namespace gazebo
         std::thread rosQueueThread;
         physics::WorldPtr world_;
         event::ConnectionPtr updateConnection_;
-        const float MODEL_OFFSET = 0.86;
+        const float MODEL_OFFSET = 0.75;
 
     };
     GZ_REGISTER_WORLD_PLUGIN(ActorPosesPlugin)

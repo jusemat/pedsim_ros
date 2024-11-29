@@ -15,36 +15,13 @@
 
     <visual name="visual">
       <geometry>
-        <mesh><uri>model://pedsim_gazebo_plugin/models/model6.dae</uri></mesh>
+        <mesh><uri>model://pedsim_gazebo_plugin/models/model.dae</uri></mesh>
       </geometry>
     </visual>
 
   </link>
 </model>
 
-      <!--geometry>
-        <mesh><uri>file://walk.dae</uri></mesh>
-      </geometry-->
-
-<!--actor name="actor_model">
-  <pose>0 0 0.75 0 0 0</pose>
-  <link name="link">
-    <visual name="visual">
-      <geometry>
-        <box>
-          <size>.5 .5 1.5</size>
-        </box>
-      </geometry>
-    </visual>
-
-  </link>
-</actor-->
-
-<!--actor name="actor">
-      <skin>
-        <filename>walk.dae</filename>
-      </skin>
-    </actor-->
 
 <!--<model name="actor_model">
   <link name="link">
